@@ -12,20 +12,3 @@ socket.on('message', function(msg) {
     // メッセージを画面に表示する
     $('#receiveMsg').prepend(msg.value + '<br>');
 });
-
-// メッセージを送る
-function SendMsg() {
-    var msg = $('#message').val();
-    // メッセージを送信する
-    socket.emit('message', { value: msg });
-    $('#message').val('');
-}
-
-// 切断する
-function DisConnect() {
-    var msg = socket.socket.transport.sessid + "は切断しました。";
-    // メッセージを送信する
-    socket.emit('message', { value: msg });
-    // socketを切断する
-    socket.disconnect();
-}

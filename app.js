@@ -16,6 +16,19 @@ var app = express()
     , server = http.createServer(app)
     , io = require('socket.io').listen(server);
 
+var gpsd = require('node-gpsd');
+var gpsListener = new gpsd.Listener({
+  port: 2947,
+  hostname: 'localhost',
+  logger:  {
+    info: function() {
+    },
+    warn: console.warn,
+    error: console.error
+  },
+  parse: true
+});
+
 app.configure(function(){
     app.set('port', process.env.PORT || 3000);
     app.set('views', path.join(__dirname, 'views'));
@@ -41,6 +54,18 @@ server.listen(3000);
 // クライアントが接続してきたときの処理
 io.sockets.on('connection', function(socket) {
     console.log("connection");
+
+    function startGPS () {
+        gpsListener.connect();
+        gpsListener.watch();
+        gpsListener.on('TPV', function (tpvData) {
+            socket.emit('message', { value: tpvData });
+            //console.log(tpvData);
+        });
+    }
+
+    startGPS();
+
     // メッセージを受けたときの処理
     socket.on('message', function(data) {
         // つながっているクライアント全員に送信
