@@ -1,0 +1,14 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "ejs": "*",
+    "express": "~3.4.8",
+    "node-gpsd": "^0.2.6",
+    "socket.io": "0.9.16"
+  }
+}
