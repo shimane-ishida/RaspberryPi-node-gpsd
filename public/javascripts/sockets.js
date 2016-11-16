@@ -10,5 +10,5 @@ socket.on('connect', function(msg) {
 // メッセージを受けたとき
 socket.on('message', function(msg) {
     //マーカーの作成
-    onCrateMapMarker(msg.value);
+    onCreateMapMarker(msg.value);
 });
