@@ -9,13 +9,6 @@ socket.on('connect', function(msg) {
 
 // メッセージを受けたとき
 socket.on('message', function(msg) {
-    // メッセージを画面に表示する
-    var obj = msg.value;
-    $('#receiveMsg').prepend(obj.lat + '<br>');
+    //マーカーの作成
+    onCrateMapMarker(msg.value);
 });
-
-var pase = function(args){
-    var res = Object;
-
-    return res;
-}

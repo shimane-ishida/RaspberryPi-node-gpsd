@@ -4,9 +4,11 @@ $(function (){
     L.tileLayer('/tiles/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
-
 });
+
+function onCreateMapMarker(LatLng){
+    var d = new Date(LatLng.time); // UTCの日時
+    L.marker([LatLng.lat, LatLng.lng]).addTo(map)
+        .bindPopup('更新時間:'+d.utc2local())
+        .openPopup();
+}
