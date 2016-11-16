@@ -1,5 +1,3 @@
-var map;
-var marker_list = new Array();
 $(function (){
     map = L.map('map').setView([35.384069, 132.764915], 12);
 
