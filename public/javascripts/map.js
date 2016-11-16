@@ -8,9 +8,8 @@ $(function (){
 });
 
 function onCreateMapMarker(LatLon){
-    var d = new Date(LatLon.time); // UTCの日時
-    d.utc2local()
+    var date = new Date(latLon.time);
     L.marker([LatLon.lat, LatLon.lon]).addTo(map)
-        .bindPopup('更新時間:'+d.getHours())
+        .bindPopup('更新時間:'+date.toLocaleString())
         .openPopup();
 }
