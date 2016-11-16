@@ -9,7 +9,8 @@ $(function (){
 
 function onCreateMapMarker(LatLon){
     var d = new Date(LatLon.time); // UTCの日時
+    d.utc2local()
     L.marker([LatLon.lat, LatLon.lon]).addTo(map)
-        .bindPopup('更新時間:'+d.utc2local())
+        .bindPopup('更新時間:'+d.getHours())
         .openPopup();
 }
