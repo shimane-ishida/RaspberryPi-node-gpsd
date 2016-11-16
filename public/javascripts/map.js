@@ -9,30 +9,7 @@ $(function (){
 function onCreateMapMarker(LatLon){
 
     var date = new Date(LatLon.time);
-
-    var marker = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([LatLon.lat, LatLon.lon])),
-        name: '更新時間:'+date.toLocaleString(), // 車両名
-    });
-    var vectorLayer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-            features: [marker],
-            attributions: ['Icon desigined by <a href="http://www.flaticon.com/free-icon/snowplow_226399">Madebyoliver from Flaticon</a>'],
-        }),
-        style: new ol.style.Style({
-            image: new ol.style.Icon({
-                anchor: [0.5, 1], // 基準をアイコンの左右真ん中・下端とする
-            })
-        }),
-        mail: "",
-        type: 'marker'
-
-    });
-    map.addLayer(vectorLayer);
-    marker_list.push(marker);
-    cnosole.log(marker_list);
-
-    // var map = L.marker([LatLon.lat, LatLon.lon]).addTo(map)
-    //     .bindPopup('更新時間:'+date.toLocaleString())
-    //     .openPopup();
+    var map = L.marker([LatLon.lat, LatLon.lon]).addTo(map)
+        .bindPopup('更新時間:'+date.toLocaleString())
+        .openPopup();
 }
