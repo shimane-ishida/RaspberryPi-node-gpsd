@@ -1,3 +1,5 @@
+var map;
+var marker_list = new Array();
 $(function (){
     map = L.map('map').setView([35.384069, 132.764915], 12);
 
@@ -7,10 +9,9 @@ $(function (){
 });
 
 function onCreateMapMarker(LatLon){
-    var _this = this;
-    if (_this.marker_list.length != 0) {
+    if (marker_list.length != 0) {
         // マーカーのクリア
-        _this.marker_list.forEach(function(gmaker, idx) {
+        marker_list.forEach(function(gmaker, idx) {
         });
     }
     var date = new Date(LatLon.time);
@@ -33,8 +34,8 @@ function onCreateMapMarker(LatLon){
         type: 'marker'
 
     });
-    _this.map.addLayer(vectorLayer);
-    _this.marker_list.push(marker);
+    map.addLayer(vectorLayer);
+    marker_list.push(marker);
 
     // var map = L.marker([LatLon.lat, LatLon.lon]).addTo(map)
     //     .bindPopup('更新時間:'+date.toLocaleString())
