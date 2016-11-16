@@ -7,9 +7,9 @@ $(function (){
 });
 
 function onCreateMapMarker(LatLon){
-    if (_this.marker_list.length != 0) {
+    if (marker_list.length != 0) {
         // マーカーのクリア
-        _this.marker_list.forEach(function(gmaker, idx) {
+        marker_list.forEach(function(gmaker, idx) {
         });
     }
     var date = new Date(LatLon.time);
