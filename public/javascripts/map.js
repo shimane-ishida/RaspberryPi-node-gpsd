@@ -7,11 +7,7 @@ $(function (){
 });
 
 function onCreateMapMarker(LatLon){
-    if (marker_list.length != 0) {
-        // マーカーのクリア
-        marker_list.forEach(function(gmaker, idx) {
-        });
-    }
+
     var date = new Date(LatLon.time);
 
     var marker = new ol.Feature({
@@ -34,6 +30,7 @@ function onCreateMapMarker(LatLon){
     });
     map.addLayer(vectorLayer);
     marker_list.push(marker);
+    cnosole.log(marker_list);
 
     // var map = L.marker([LatLon.lat, LatLon.lon]).addTo(map)
     //     .bindPopup('更新時間:'+date.toLocaleString())
