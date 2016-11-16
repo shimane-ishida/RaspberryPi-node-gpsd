@@ -9,7 +9,7 @@ $(function (){
 function onCreateMapMarker(LatLon){
 
     var date = new Date(LatLon.time);
-    var map = L.marker([LatLon.lat, LatLon.lon]).addTo(map)
+    L.marker([LatLon.lat, LatLon.lon]).addTo(map)
         .bindPopup('更新時間:'+date.toLocaleString())
         .openPopup();
 }
