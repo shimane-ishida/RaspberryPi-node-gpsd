@@ -32,8 +32,8 @@ function onCreateMapMarker(LatLon){
         type: 'marker'
 
     });
-    this.map.addLayer(vectorLayer);
-    this.marker_list.push(marker);
+    map.addLayer(vectorLayer);
+    marker_list.push(marker);
 
     // var map = L.marker([LatLon.lat, LatLon.lon]).addTo(map)
     //     .bindPopup('更新時間:'+date.toLocaleString())
