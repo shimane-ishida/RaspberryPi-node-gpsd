@@ -60,7 +60,6 @@ io.sockets.on('connection', function(socket) {
         gpsListener.watch();
         gpsListener.on('TPV', function (tpvData) {
             socket.emit('message', { value: tpvData });
-            //console.log(tpvData);
         });
     }
 
