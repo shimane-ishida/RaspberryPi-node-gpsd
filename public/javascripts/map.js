@@ -7,9 +7,9 @@ $(function (){
 });
 
 function onCreateMapMarker(LatLon){
-    if (marker_list.length != 0) {
+    if (this.marker_list.length != 0) {
         // マーカーのクリア
-        marker_list.forEach(function(gmaker, idx) {
+        this.marker_list.forEach(function(gmaker, idx) {
         });
     }
     var date = new Date(LatLon.time);
@@ -32,8 +32,8 @@ function onCreateMapMarker(LatLon){
         type: 'marker'
 
     });
-    map.addLayer(vectorLayer);
-    marker_list.push(marker);
+    this.map.addLayer(vectorLayer);
+    this.marker_list.push(marker);
 
     // var map = L.marker([LatLon.lat, LatLon.lon]).addTo(map)
     //     .bindPopup('更新時間:'+date.toLocaleString())
