@@ -8,7 +8,7 @@ $(function (){
 });
 
 function onCreateMapMarker(LatLon){
-    var date = new Date(latLon.time);
+    var date = new Date(LatLon.time);
     L.marker([LatLon.lat, LatLon.lon]).addTo(map)
         .bindPopup('更新時間:'+date.toLocaleString())
         .openPopup();
