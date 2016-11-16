@@ -6,9 +6,9 @@ $(function (){
     }).addTo(map);
 });
 
-function onCreateMapMarker(LatLng){
-    var d = new Date(LatLng.time); // UTCの日時
-    L.marker([LatLng.lat, LatLng.lng]).addTo(map)
+function onCreateMapMarker(LatLon){
+    var d = new Date(LatLon.time); // UTCの日時
+    L.marker([LatLon.lat, LatLon.lon]).addTo(map)
         .bindPopup('更新時間:'+d.utc2local())
         .openPopup();
 }
