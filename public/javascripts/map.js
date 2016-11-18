@@ -1,17 +1,24 @@
 $(function (){
-    map = L.map('map').setView([35.384069, 132.764915], 16);
+    var DefaultZoom = 16;
+    var MinZoom = 15;
+    var MaxZoom = 17;
+    map = L.map('map',{
+        center:[35.3846096,132.764914],
+        zoom: DefaultZoom,
+        minZoom: MinZoom,
+        maxZoom: MaxZoom
+    });
+
     MarkerLayer = new L.layerGroup();
     L.tileLayer('/tiles/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-//    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-//        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-//    }).addTo(map);
+
 });
 
 function onCreateMapMarker(LatLon){
-      var markers = [];
-//    console.log(MarkerLayer.getLayers().length);
+
+    var markers = [];
     if(MarkerLayer.getLayers !=0 ){
         MarkerLayer.clearLayers();
     }
