@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Sample Socket.IO' });
+  res.render('index', { title: 'CocoNavi' });
 };
