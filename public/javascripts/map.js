@@ -1,5 +1,5 @@
 $(function (){
-    map = L.map('map').setView([35.384069, 132.764915], 17);
+    map = L.map('map').setView([35.384069, 132.764915], 16);
     MarkerLayer = new L.layerGroup();
     L.tileLayer('/tiles/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
