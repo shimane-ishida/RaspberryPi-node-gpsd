@@ -14,3 +14,6 @@ RaspberryPiにGPSモジュールを付け、node-gpsdで取得した情報をSok
 ------------
 * git cloneして下記のコマンドで必要なパッケージはインストールされる
 $ npm install
+
+------------
+地図画像(タイル画像)はpublic/tiles/以下へ保存
