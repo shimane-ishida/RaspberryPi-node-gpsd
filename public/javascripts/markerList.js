@@ -28,11 +28,10 @@ function convertCSVtoArray(str){
 
 function onCreateMapMarker(FileArray){
     
-    var markers = [];
-    console.log(FileArray);
+    var buildingMarkers = [];
 
     for(i=0;i<FileArray.length;i++){
-        var marker = new L.Marker([FileArray[i][0],FileArray[i][1]]);
+        var buildingMarker = new L.Marker([FileArray[i][0],FileArray[i][1]]);
         var strContents ='<div><img src="img/'+FileArray[i][2]+'" width="60" height="60"></div>';
         strContents += FileArray[i][3];
         var popup = L.popup({
@@ -41,8 +40,8 @@ function onCreateMapMarker(FileArray){
         })
             .setContent(strContents)
             .setLatLng([FileArray[i][0],FileArray[i][1]]);
-        marker.bindPopup(popup);
-        markers.push(marker);
+        buildingMarker.bindPopup(popup);
+        buildingMarkers.push(buildingMarker);
     }
-    var markerlayer = new L.layerGroup(markers).addTo(this.map);    
+    var buildingMarkerlayer = new L.layerGroup(buildingMarkers).addTo(this.map);    
 }
