@@ -28,7 +28,7 @@ function onCreateMapMarker(LatLon){
        closeButton: false,
        closeOnClick: false
     })
-        .setContent('<p>更新時間:'+date.toLocaleString()+'<p>')
+        .setContent('<p>更新時間:'+date.toLocaleString()+'</p>')
         .setLatLng([LatLon.lat,LatLon.lon]);
     marker.bindPopup(popup);
     markers.push(marker);
