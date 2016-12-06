@@ -1,7 +1,3 @@
-$(function(){
-    getCSV();
-});
-
 function getCSV(){
     $.ajax({
         url: '../img/fileList.csv',
