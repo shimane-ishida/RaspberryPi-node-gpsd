@@ -31,7 +31,7 @@ function onCreateMapMarker(FileArray){
     var buildingMarkers = [];
 
     for(i=0;i<FileArray.length;i++){
-        var buildingMarker = new L.Marker([FileArray[i][0],FileArray[i][1]]);
+        var buildingMarker = new L.Marker([FileArray[i][0],FileArray[i][1]],{ icon: ICON_COMPANY });
         var strContents ='<div><img src="img/'+FileArray[i][2]+'" width="60" height="60"></div>';
         strContents += FileArray[i][3];
         var popup = L.popup({
