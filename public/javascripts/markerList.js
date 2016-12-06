@@ -18,11 +18,11 @@ function convertCSVtoArray(str){
     for(var i=0;i<tmp.length;++i){
         result[i] = tmp[i].split(',');
     }
-    onCreateMapMarker(result);
+    onCreateBuildMarker(result);
 
 }
 
-function onCreateMapMarker(FileArray){
+function onCreateBuildMarker(FileArray){
     
     var buildingMarkers = [];
 
