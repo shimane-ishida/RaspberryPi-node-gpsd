@@ -1,6 +1,6 @@
 function getCSV(){
     $.ajax({
-        url: '../img/fileList.csv',
+        url: '../img/list/fileList.csv',
         success: function(data){
             convertCSVtoArray(data);
         },
@@ -30,7 +30,7 @@ function onCreateBuildMarker(FileArray){
         var icon;
         icon = getIcon(FileArray[i][4]);
         var buildingMarker = new L.Marker([FileArray[i][0],FileArray[i][1]],{ icon: icon });
-        var strContents ='<div><img src="img/'+FileArray[i][2]+'" width="60" height="60"></div>';
+        var strContents ='<div><img src="img/list/'+FileArray[i][2]+'" width="60" height="60"></div>';
         strContents += FileArray[i][3];
         var popup = L.popup({
             loseButton: false,
