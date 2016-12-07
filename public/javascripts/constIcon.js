@@ -1,20 +1,23 @@
+var ICONDIR = "../img/icon/";
+var IMGLISTDIR = "../img/list/";
+
 var ICON_COMPANY = L.icon({
-    iconUrl: '../img/icon/mapicons01-022.png',
-    iconRetinaUrl: '../img/icon/mapicons01-022.png',
+    iconUrl: ICONDIR+'mapicons01-022.png',
+    iconRetinaUrl: ICONDIR+'mapicons01-022.png',
     iconSize: [30, 30],
     iconAnchor: [25, 50],
     popupAnchor: [0, -50],
 });
 var ICON_DANGER = L.icon({
-    iconUrl: '../img/icon/mapicons01-062.png',
-    iconRetinaUrl: '../img/mapicons01-062.png',
+    iconUrl: ICONDIR+'mapicons01-062.png',
+    iconRetinaUrl: ICONDIR+'mapicons01-062.png',
     iconSize: [30, 30],
     iconAnchor: [25, 50],
     popupAnchor: [0, -50],
 });
 var ICON_OTHER = L.icon({
-    iconUrl: '../img/icon/mapicons01-111.png',
-    iconRetinaUrl: '../img/mapicons01-111.png',
+    iconUrl: ICONDIR+'mapicons01-111.png',
+    iconRetinaUrl: ICONDIR+'mapicons01-111.png',
     iconSize: [30, 30],
     iconAnchor: [25, 50],
     popupAnchor: [0, -50],

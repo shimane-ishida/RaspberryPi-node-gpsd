@@ -1,6 +1,6 @@
 function getCSV(){
     $.ajax({
-        url: '../img/list/fileList.csv',
+        url: IMGLISTDIR+'fileList.csv',
         success: function(data){
             convertCSVtoArray(data);
         },
@@ -24,13 +24,13 @@ function convertCSVtoArray(str){
 
 function onCreateBuildMarker(FileArray){
     
-    var buildingMarkers = [];
+    var markers = [];
 
     for(i=0;i<FileArray.length;i++){
         var icon;
         icon = getIcon(FileArray[i][4]);
         var buildingMarker = new L.Marker([FileArray[i][0],FileArray[i][1]],{ icon: icon });
-        var strContents ='<div><img src="img/list/'+FileArray[i][2]+'" width="60" height="60"></div>';
+        var strContents ='<div><img src="'+IMGLISTDIR+FileArray[i][2]+'" width="60" height="60"></div>';
         strContents += FileArray[i][3];
         var popup = L.popup({
             loseButton: false,
@@ -39,9 +39,9 @@ function onCreateBuildMarker(FileArray){
             .setContent(strContents)
             .setLatLng([FileArray[i][0],FileArray[i][1]]);
         buildingMarker.bindPopup(popup);
-        buildingMarkers.push(buildingMarker);
+        markers.push(buildingMarker);
     }
-    var buildingMarkerlayer = new L.layerGroup(buildingMarkers).addTo(this.map);    
+    var markerlayer = new L.layerGroup(markers).addTo(this.map);    
 }
 
 function getIcon(strKey){
