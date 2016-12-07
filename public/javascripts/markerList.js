@@ -27,7 +27,9 @@ function onCreateBuildMarker(FileArray){
     var buildingMarkers = [];
 
     for(i=0;i<FileArray.length;i++){
-        var buildingMarker = new L.Marker([FileArray[i][0],FileArray[i][1]],{ icon: ICON_COMPANY });
+        var icon;
+        icon = getIcon(FileArray[i][4]);
+        var buildingMarker = new L.Marker([FileArray[i][0],FileArray[i][1]],{ icon: icon });
         var strContents ='<div><img src="img/'+FileArray[i][2]+'" width="60" height="60"></div>';
         strContents += FileArray[i][3];
         var popup = L.popup({
@@ -40,4 +42,14 @@ function onCreateBuildMarker(FileArray){
         buildingMarkers.push(buildingMarker);
     }
     var buildingMarkerlayer = new L.layerGroup(buildingMarkers).addTo(this.map);    
+}
+
+function getIcon(strKey){
+    var res = ICON_OTHER;
+    Object.keys(Icon).forEach(function(key){
+        if(strKey == key){ 
+            res = this[key];
+        }
+    },Icon);
+    return res;
 }

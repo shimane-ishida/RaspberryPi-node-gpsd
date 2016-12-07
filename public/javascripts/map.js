@@ -20,7 +20,6 @@ $(function (){
 
 function onCreateMapMarker(LatLon){
     console.log(LatLon);
-
     var markers = [];
     if(MarkerLayer.getLayers !=0 ){
         MarkerLayer.clearLayers();
